@@ -13,7 +13,9 @@
                #:cl-ppcre
                #:chtml-matcher
                #:cxml
-               #:css-selectors)
+               #:css-selectors
+               #:hunchentoot
+               #:xml-emitter)
 
   :components ((:file "package")
                (:file "utils")
