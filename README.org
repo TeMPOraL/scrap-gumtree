@@ -1,0 +1,15 @@
+#+title: Web Scraping Gumtree w Common Lispie
+#+startup: hidestars
+
+Repozytorium zawiera kod stworzony w czasie spotkania grupy KrakLisp #14 dnia 29.04.2016.
+
+Obok źródeł, nad którymi pracowaliśmy dołożyłem także - w katalogu [[file:/presentation]] - prezentację,
+której używałem na początku. Prezentacja to prosty dokument org-mode, napędzany przez demo-it i org-tree-slide.
+
+Video z zajęć [[https://www.youtube.com/watch?v=b6xo_qAa_IU][na YouTube]].
+
+Zdaje się, że [[http://www.wykop.pl/tag/kraklisp/][KrakLisp zdobywa fejma na wypoku]].
+
+Nyan Mode [[https://github.com/TeMPOraL/nyan-mode/][tam gdzie zawsze]].
+
+Pozdrawiam!

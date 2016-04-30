@@ -1,0 +1,85 @@
+#+title: KrakLisp #13 - Web Scraping w Common Lispie
+#+author: TeMPOraL
+#+date: 29.04.2016
+#+startup: hidestars
+
+* Zadanie
+  Scraping danych z serwisu internetowego i przekształcenie ich w coś użytecznego.
+
+* Zadanie
+
+  *Ofiara*: gumtree.pl
+
+  [[file:gumtree.jpg]]
+
+  /(nie robiłem tego wcześniej na tej stronie - odkrywamy ją razem!)/
+
+  *Coś użytecznego*: RSS ze strony.
+
+* Zadanie
+
+  *Przy okazji omówimy sobie tworzenie podstawowego projektu.*
+
+  /Oraz bardzo przy okazji, zademonstruję działanie magita./
+
+* Jak to ugryźć w Lispie?
+
+** Scraping
+   - połączenie się ze stroną
+     - *Drakma*
+
+
+   - wydobycie danych z treści strony
+     - *chtml-matcher* - budowa DOMu strony z jej tekstu
+     - *cxml* - budowa DOMu strony z jej tekstu
+     - *css-selectors* - wybieranie danych z gotowego DOMu
+
+
+   - reprezentacja
+     - *local-time* - reprezentacja czasu
+
+** RSS
+   - *Hunchentoot* - serwer HTTP do serwowania kanału RSS
+
+   - *xml-emitter* - budowa i emisja RSSów z naszych struktur danych
+
+   - *trivial-timers* - monitorowanie
+
+** Pozostałe
+
+   - *Alexandria* - zawsze przydatna!
+
+* Do roboty!
+
+  Zaczniemy od stworzenia podstawowej struktury projektu.
+
+** Definicja systemu
+   http://paste.lisp.org/display/314984
+
+   #+BEGIN_SRC lisp
+     (asdf:defsystem #:scrap-gumtree
+       :serial t
+       :long-name "Scrapper for gumtree."
+       :author "Imię Nazwisko <email>"
+       :description "Scrapper for random web stuff."
+
+       :license "MIT"
+
+       :encoding :utf-8
+
+       :depends-on (#:alexandria)
+
+       :components ((:file "package")
+                    (:file "utils")
+                    (:file "main")))
+   #+END_SRC
+
+
+** pacakge.lisp
+   #+BEGIN_SRC lisp
+     (defpackage #:scrap-gumtree
+       (:use #:cl
+             #:alexandria))
+   #+END_SRC
+
+
