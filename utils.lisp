@@ -1,5 +1,8 @@
 (in-package #:scrap-gumtree)
 
+;;; strip-whitespace function taken from Grue's webgunk project; see:
+;;; https://github.com/tshatrov/webgunk/blob/master/webgunk.lisp
+;;; for context / original source.
 (defun strip-whitespace (str)
   ;;remove initial whitespace
   (setf str (cl-ppcre:regex-replace "^\\s+" str ""))
@@ -20,6 +23,10 @@
   (setf str (cl-ppcre:regex-replace-all "(\\r\\n|\\n){2,}" str '(0)))
   str)
 
+
+;;; node-text function taken from Grue; see:
+;;; http://readevalprint.tumblr.com/post/80764585017/web-scraping-with-common-lisp-introduction
+;;; for the original context.
 (defun node-text (node &rest args &key test (strip-whitespace t))
   (let (values result)
     (when (or (not test) (funcall test node))
